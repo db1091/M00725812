@@ -93,7 +93,7 @@ for led in range(77,110):
     leds[led] = (255,0,0)
     time.sleep(.01)
     client.put_pixels(leds)
-for led in range(137,172):
+for led in range(137,171):
     leds[led] = (255,0,0)
     time.sleep(.01)
     client.put_pixels(leds)     

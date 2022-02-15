@@ -2,14 +2,14 @@ import opc
 import time
 import random
 
-leds = [(0,0,0)]*360
+leds = [(0,0,0)]*360 #white
 
 client = opc.Client('localhost:7890')
 client.put_pixels(leds)
 client.put_pixels(leds)
 
 for led in range(60): #pick out indeces: led = 0,1,2,3...
-    leds[led] = (255,0,0)
+    leds[led] = (255,0,0) 
     time.sleep(.01)
     client.put_pixels(leds)
 for led in range(119,360,60):
