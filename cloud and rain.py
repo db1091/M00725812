@@ -9,8 +9,8 @@ client.put_pixels(leds)
 client.put_pixels(leds)
 
 led = 0
-while led<5:
-    leds[led+2] = (255,255,255)
+while led<5: #scroll all rows at the same time
+    leds[led+2] = (255,255,255) # set the leds to colour white, incrementing position each frame
     leds[led+11] = (255,255,255)
     leds[led+19] = (255,255,255)
     leds[led+27] = (255,255,255)
@@ -29,37 +29,20 @@ while ledz<68:
     leds[ledz+25] = (255,255,255)
     client.put_pixels(leds)
     time.sleep(.1)
-    ledz = ledz + 1
-#def loop1():    
-while True:
+    ledz = ledz + 1   
+while True:  #do this forever
      for leda in range(183, 360,60):
-          leds[slice(182,187)] = [(0,0,0)]*5
+          leds[slice(182,187)] = [(0,0,0)]*5 #set specific indeces to black
           leds[slice(242,247)] = [(0,0,0)]*5
           leds[slice(302,307)] = [(0,0,0)]*5
           leds[leda] = (0,0,255)
           leds[leda+1] = (0,0,255)
           leds[leda+3] = (0,0,255)
-          if leda == 303:
-                leda = 183
+          if leda == 303: # if rain drops reach 303 
+                leda = 183 # a new rain fall starts from 183
           client.put_pixels(leds)
-          time.sleep(0.5)
-#def loop2():            
-##    while True:       
-##        for ledo in range(242, 360,60):
-##            leds[240:300] = [(0,0,0)]*360
-##            leds[ledo] = (0,0,255)
-##            leds[ledo+3] = (0,0,255)
-##            client.put_pixels(leds)
-##            time.sleep(1)
-####            if ledo ==305:
-##                ledo = 182
-##thread1 = threading.Thread(target=loop1)
-##thread1.start()
-
-##thread2 = threading.Thread(target=loop2)
-##thread2.start()
-##      
-     for leda in range(192, 360,60):
+          time.sleep(0.5)#rainfall speed
+   for leda in range(192, 360,60):
           leds[slice(192,197)] = [(0,0,0)]*5
           leds[slice(251,256)] = [(0,0,0)]*5
           leds[slice(311,316)] = [(0,0,0)]*5
