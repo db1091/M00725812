@@ -2,7 +2,7 @@ import opc
 import time
 import random
 
-leds = [(255,255,255)]*360
+leds = [(255,255,255)]*360 #white
 
 client = opc.Client('localhost:7890')
 client.put_pixels(leds)

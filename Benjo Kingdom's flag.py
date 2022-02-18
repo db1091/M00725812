@@ -2,22 +2,22 @@ import opc
 import time
 import random
 
-leds = [(0,0,0)]*360 #white
+leds = [(0,0,0)]*360 #black
 
 client = opc.Client('localhost:7890')
 client.put_pixels(leds)
 client.put_pixels(leds)
 
-for led in range(60): #pick out indeces: led = 0,1,2,3...
-    leds[led] = (255,0,0) 
-    time.sleep(.01)
+for led in range(60): #pick out indeces: led = 0,1,2,3...60
+    leds[led] = (255,0,0) #set leds to red 
+    time.sleep(.01) #delay the frame a bit
     client.put_pixels(leds)
-for led in range(119,360,60):
+for led in range(119,360,60): #pick out indeces: led = 119,179,...360 in steps of 60
     leds[led] = (0,255,0)
     time.sleep(.01)
     client.put_pixels(leds)
 for led in range(300,360):
-    leds[299-led] = (0,0,255)
+    leds[299-led] = (0,0,255) #move in the reverse direction
     time.sleep(.01)
     client.put_pixels(leds)
 for led in range(60,300,60):
