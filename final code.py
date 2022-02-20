@@ -7,7 +7,7 @@ client = opc.Client('localhost:7890')
 client.put_pixels(leds)
 client.put_pixels(leds)
 print(leds)
-while True: #ask questions infintely after every animation 
+while True: #ask questions infinitely after every animation 
     print("Which animation would you like to display?")
     print("a. Benjo's custom flag")
     print("b. Rainfall")
