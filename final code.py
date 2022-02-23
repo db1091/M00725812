@@ -334,6 +334,7 @@ while True: #ask questions infinitely after every animation
             time.sleep(0.1)
             client.put_pixels(leds)
     elif x == "f":
+        leds = [(0,0,0)]*360 
         led = 0
         while led<30: #scroll all rows at the same time
          for rows in range(3): #first three rows left to right
